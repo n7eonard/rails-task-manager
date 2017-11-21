@@ -1,5 +1,5 @@
-<h1>Create a new task</h1>
 
+<div class= 'text-center'>
 <%= form_for @task do |task| %>
 <%= task.label :title %>
 <%= task.text_field :title %>
@@ -10,7 +10,14 @@
 <%= task.label :completed %>
 <%= task.check_box :completed %>
 
-<%= task.submit "Create", class: "btn btn-primary" %>
-
-<%= link_to "Retour", tasks_path, class: "btn btn-primary"%>
+<%= if current_page?(edit_task_path(@task)) %>
+  <%= task.submit "Update", class: "btn btn-primary" %>
+<%= elsif current_page?(task_path(@task)) %>
+  <%= task.submit "Create", class: "btn btn-primary" %>
 <% end %>
+<% end %>
+
+
+<%= link_to "Cancel", tasks_path, class: "btn btn-primary"%>
+
+</div>

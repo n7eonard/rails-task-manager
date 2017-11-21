@@ -1,8 +1,12 @@
+<p class="alert alert-info text-center" role="alert"> <%= link_to "Edit this task", edit_task_path %></p>
+
+<div class= 'text-center'>
+
 <h2> <%= @task.title %> </h2>
 
 <p> <%= @task.details %></p>
 
 <span>
-  <%= link_to "back to index", tasks_path, class: "btn btn-primary"%>
+  <%= link_to "Back to home", tasks_path, class: "btn btn-primary"%>
 </span>
-
+</div>
