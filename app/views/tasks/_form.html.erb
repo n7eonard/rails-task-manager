@@ -1,0 +1,16 @@
+<h1>Create a new task</h1>
+
+<%= form_for @task do |task| %>
+<%= task.label :title %>
+<%= task.text_field :title %>
+
+<%= task.label :details %>
+<%= task.text_field :details %>
+
+<%= task.label :completed %>
+<%= task.check_box :completed %>
+
+<%= task.submit "Create", class: "btn btn-primary" %>
+
+<%= link_to "Retour", tasks_path, class: "btn btn-primary"%>
+<% end %>
