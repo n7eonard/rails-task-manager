@@ -1,0 +1,8 @@
+<h1>My tasks</h1>
+
+
+<ul>
+  <% @tasks.each do |task| %>
+  <li> <span class="badge badge-pill badge-success"><%= task[:completed] %></span> <%= task[:title] %> (<%= task[:details] %>)</li>
+  <% end %>
+</ul>
